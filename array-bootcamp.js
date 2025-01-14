@@ -424,27 +424,57 @@ console.log(nameUpperCase);
 */
 
 /* 33 */
-/* I person-arrayen ovan, spegelvänd alla namn. */
-console.log('Uppgift 33');
+/* I person-arrayen ovan, spegelvänd alla namn. 
 
+SVAR:
+//Först skapas en ny array genom .map där varje objekt sparas i "person". Sedan för att ändra köra namnet baklänges så måste man splitta strängen till enskilda tecken, sedan köra .reverse och därefter sätta ihop det till en sträng igen och returnera det. Med spreadoperatorn ...person betyder att det skapas ett nytt objekt med alla ursprungliga egenskaper.
 
+let reversedNames = persons.map(person => {
+  return {
+    ...person,
+    name: person.name.split('').reverse().join(''),
+  };
+});
+
+console.log(reversedNames);
+*/
+
+//LOOP ARRAYS
 /* 34 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
-/* Loopa ut följande array med en forEach()-loop. console.log() varje ord. */
-console.log('Uppgift 34');
+/* Loopa ut följande array med en forEach()-loop. console.log() varje ord. 
 
+SVAR:
+let fruits = ['apelsin', 'päron', 'äpple', 'kiwi'];
+
+fruits.forEach((fruit, index, array) => {
+  console.log(`Här kommer ${fruit} på plats ${index}, och i arrayen: ${array}`);
+});
+*/
 
 /* 35 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
-/* Loopa ut följande array med en for of-loop. console.log() varje ord. */
-console.log('Uppgift 35');
+/* Loopa ut följande array med en for of-loop. console.log() varje ord. 
 
+SVAR:
+let fruits = ['apelsin', 'päron', 'äpple', 'kiwi'];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+*/
 
 /* 36 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
-/* Loopa ut följande array med en for-loop. console.log() varje ord. */
-console.log('Uppgift 36');
+/* Loopa ut följande array med en for-loop. console.log() varje ord. 
 
+SVAR:
+let fruits = ['apelsin', 'päron', 'äpple', 'kiwi'];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(`${fruits[i]} ligger på plats ${[i]}!`);
+}
+*/
 
 /* 37 */
 /* let fruits = ['apelsin', 'päron', 'äpple', 'kiwi']; */
@@ -452,5 +482,27 @@ console.log('Uppgift 36');
 /* 0 - apelsin */
 /* 1 - päron */
 /* 2 - äpple */
-/* osv... */
-console.log('Uppgift 37');
+/* osv... 
+
+SVAR:
+//for loop
+console.log('Detta är for-loopen');
+for (let i = 0; i < fruits.length; i++) {
+  console.log(`${i} - ${fruits[i]}`)
+};
+
+//forEach loop
+console.log('Detta är forEach-loopen');
+fruits.forEach((fruits, index) => {
+  console.log(`${index} - ${fruits}`);  
+});
+
+//for of loop där man måste använda sig av .entries() för att kunna få två parametrar.
+console.log('Detta är for of-loopen');
+for (let [index, fruit] of fruits.entries()) {
+  console.log(`${index} - ${fruit}`);
+}
+
+*/
+
+
